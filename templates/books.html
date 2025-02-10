@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Kitablar Siyahısı</h1>
+    <table>
+        <tr>
+            <th>Kitab Adı</th>
+            <th>Müəllif</th>
+            <th>Nəşr Tarixi</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.published_date|date:"d/m/Y"  }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
